@@ -9,6 +9,9 @@ val waterfilter : (Int) -> Int = { dirty -> dirty/2}
     var dirtyLevel = 19
     dirtyLevel = updateDirty(dirtyLevel){dirtyLevel -> dirtyLevel + 23}
     println("Dirty level is $dirtyLevel")
+
+    val sum = calculate(5, 10) { a, b -> a + b }
+    println("The sum of 5 and 10 is $sum")
 }
 
 fun updateDirty(dirty : Int, operation : (Int) -> Int): Int{
@@ -17,3 +20,6 @@ fun updateDirty(dirty : Int, operation : (Int) -> Int): Int{
 
 fun increaseDirty(start : Int) = start + 1
 
+fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+    return operation(a, b)
+}
