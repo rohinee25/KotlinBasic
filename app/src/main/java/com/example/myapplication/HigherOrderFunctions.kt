@@ -12,6 +12,14 @@ val waterfilter : (Int) -> Int = { dirty -> dirty/2}
 
     val sum = calculate(5, 10) { a, b -> a + b }
     println("The sum of 5 and 10 is $sum")
+
+    // Kotlin
+    val numbers = mutableListOf("one", "two", "three", "four")
+    numbers.add("five")
+    println(numbers)// This is OK
+    val immutableNumbers = listOf("one", "two")
+    print(immutableNumbers)
+      //immutableNumbers.add("five") // Compilation error - Unresolved reference: add
 }
 
 fun updateDirty(dirty : Int, operation : (Int) -> Int): Int{
